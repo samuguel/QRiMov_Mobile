@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage
+            xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+            xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="App13.Views.PopupPage">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation
+      PositionIn="Left"
+      PositionOut="Center"
+      ScaleIn="1"
+      ScaleOut="0.7"
+      DurationIn="400"/>
+    </pages:PopupPage.Animation>
+
+    <StackLayout
+             BackgroundColor="White"
+            IsClippedToBounds="True"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+            Padding="10, 5"
+            Spacing="3">
+
+        <Label BackgroundColor="Orange" Text="Filtro" FontSize="Large" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" Margin="10"/>
+
+        <StackLayout Orientation="Horizontal">
+            <Picker x:Name="cidade"
+                        Title="Selecione a cidade"
+                            HorizontalOptions="CenterAndExpand">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Atibaia</x:String>
+                        <x:String>Bragança Paulista</x:String>
+                        <x:String>Bom jesus dos Perdões</x:String>
+                        <x:String>Piracaia</x:String>
+                        <x:String>Nazaré</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Picker x:Name="bairro"
+                        Title="Selecione o Bairro"
+                            HorizontalOptions="CenterAndExpand">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>alvinopolis</x:String>
+                        <x:String>cidade satelite</x:String>
+                        <x:String>quebrada</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Picker x:Name="situacao"
+                        Title="Interessado em"
+                            HorizontalOptions="CenterAndExpand">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Comprar</x:String>
+                        <x:String>Alugar</x:String>
+                        <x:String>Imoveis novos</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+            <Picker x:Name="tipo"
+                        Title="Selecione o tipo de residencia"
+                            HorizontalOptions="CenterAndExpand">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Apartamento</x:String>
+                        <x:String>Casa</x:String>
+                        <x:String>Chacara</x:String>
+                        <x:String>flat</x:String>
+                        <x:String>Lote/Terreno</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </StackLayout>
+
+        <Label Text="Selecione o valor minimo que deseja buscar" FontSize="Small"/>
+
+        <Slider Maximum="1000" Minimum="30" MinimumTrackColor="Orange" MaximumTrackColor="DarkOrange" ThumbColor="Orange"  ValueChanged="OnSliderValueChanged" VerticalOptions="CenterAndExpand"/>
+
+        <Label x:Name="textoValorMin"
+                       Text=""
+                       HorizontalOptions="Center" />
+        
+        <Label Text="Selecione o valor maximo que deseja buscar" FontSize="Small"/>
+
+        <Slider Maximum="1000" Minimum="1" MinimumTrackColor="Orange" MaximumTrackColor="DarkOrange" ThumbColor="Orange" ValueChanged="OnSliderValueChanged2" VerticalOptions="CenterAndExpand"/>
+
+        <Label x:Name="textoValorMax"
+                       Text=""
+                       HorizontalOptions="Center" />
+        <Button Text="Filtrar!"
+                        BackgroundColor="Orange"
+                VerticalOptions="End"
+                HorizontalOptions="Center"/>
+    </StackLayout>
+
+
+
+</pages:PopupPage>

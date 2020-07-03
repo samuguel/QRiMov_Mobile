@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App13.Views.Principal" Title="Principal"> 
+    <ContentPage.Content>
+        <StackLayout>
+			<Image Source="notas1.png" />
+			<Label Text="Pagina Principal!"
+				   FontAttributes="Bold"
+				   FontSize="Large"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

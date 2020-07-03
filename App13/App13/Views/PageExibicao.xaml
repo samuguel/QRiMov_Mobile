@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:cv="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             x:Class="App13.Views.PageExibicao"
+             Title="Informações">
+
+    <ScrollView Margin="5,3,5,3" Orientation="Vertical">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <!--0-->
+                <ColumnDefinition Width="*"/>
+                <!--1-->
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="60"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <cv:CarouselViewControl x:Name="carousel" Grid.ColumnSpan="2" Grid.Row="0"
+                    ItemsSource="{Binding Views}"
+                    ShowArrows="False"
+                    ShowIndicators="true"
+                    PositionSelectedCommand="{Binding PositionCommand}"
+                    PositionSelected="Handle_PositionSelected"
+                    Scrolled="Handle_Scrolled"
+                    Orientation="Horizontal">
+            </cv:CarouselViewControl>
+            
+                <Label x:Name="Nome" Text="{Binding Nome}" FontSize="Medium" Grid.ColumnSpan="2" Grid.Row="1" HorizontalOptions="Center"/>
+            <Label x:Name="Status" Text="{Binding Status}"  FontSize="Medium" Grid.Column="0" Grid.Row="2" HorizontalOptions="Center"/>
+            <Label x:Name="Valor" Text="{Binding Valor}" FontSize="Medium" Grid.Column="1" Grid.Row="2" HorizontalOptions="Center"/>
+            <Label x:Name="Bairro" Text="{Binding Bairro}" FontSize="Medium" Grid.Column="0" Grid.Row="3" HorizontalOptions="Center"/>
+            <Label x:Name="Cidade" Text="{Binding Cidade}" FontSize="Medium" Grid.Column="1" Grid.Row="3" HorizontalOptions="Center"/>
+
+            <Grid Grid.Row="4" Grid.ColumnSpan="2" Margin="5,10,5,10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Image Source="img1.png" Grid.Column="0" Grid.Row="0"/>
+                <Label Text="175m²" Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center"/>
+                <Image Source="img2.png" Grid.Column="1" Grid.Row="0"/>
+                <Label Text="4" Grid.Column="1" Grid.Row="1" HorizontalTextAlignment="Center"/>
+                <Image Source="img4.png" Grid.Column="2" Grid.Row="0"/>
+                <Label Text="3" Grid.Column="2" Grid.Row="1" HorizontalTextAlignment="Center"/>
+                <Image Source="img5.png" Grid.Column="3" Grid.Row="0"/>
+                <Label Text="0" Grid.Column="3" Grid.Row="1" HorizontalTextAlignment="Center"/>
+            </Grid>
+                
+            <Label Text="Mais Informações" Grid.ColumnSpan="1" Grid.Row="5" TextColor="Orange" FontSize="Large" HorizontalOptions="Center"/>
+            <Label x:Name="Informacoes" Text="{Binding Informacoes}" FontSize="Medium" Grid.ColumnSpan="2" Grid.Row="6" HorizontalOptions="Center"/>
+            
+        </Grid>
+    </ScrollView>
+</ContentPage>

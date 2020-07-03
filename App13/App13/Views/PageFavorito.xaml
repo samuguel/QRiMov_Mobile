@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App13.Views.PageFavorito">
+    <ContentPage.Content>
+        <StackLayout Margin="10,5,10,5">
+
+            <ListView x:Name="listaCasa"
+                  HasUnevenRows="true"
+                  SeparatorVisibility="None"
+                      VerticalOptions="CenterAndExpand"
+                      Grid.ColumnSpan="3"
+                      Grid.Row="1"
+                      IsPullToRefreshEnabled="True"
+                      SelectionMode="Single"
+                      ItemSelected="ListaCasa_ItemSelectedAsync"
+                      Margin="5"
+                  >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0"
+                                       Source="{Binding ImagemUrl}" 
+                                       WidthRequest="50"
+                                       HeightRequest="50"/>
+                                    <Label x:Name="Imobiliaria" Text="{Binding imobiliaria}"
+                                       Grid.Column="1"
+                                       VerticalTextAlignment="Center"
+                                       HorizontalOptions="Start"/>
+                                    <ImageButton Source="estrela.png" BackgroundColor="Transparent" Grid.Column="2" />
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Image x:Name="URL" Source="{Binding casaUrl}"
+                                       Aspect="AspectFill"
+                                       WidthRequest="200"
+                                       Grid.Column="0"
+                                       Grid.RowSpan="5"/>
+                                    <Label x:Name="codigo" Text="{Binding id}" Grid.Column="1" Grid.Row="0" IsVisible="False" HorizontalOptions="Center"/>
+                                    <Label x:Name="nome" Text="{Binding Nome}" Grid.Column="1" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label x:Name="status" Text="{Binding Status}" Grid.Column="1" Grid.Row="1" HorizontalOptions="Center"/>
+                                    <Label x:Name="valor" Text="{Binding Valor}" Grid.Column="1" Grid.Row="2" HorizontalOptions="Center"/>
+                                    <Label x:Name="bairro" Text="{Binding Bairro}" Grid.Column="1" Grid.Row="3" HorizontalOptions="Center"/>
+                                    <Label x:Name="cidade" Text="{Binding Cidade}" Grid.Column="1" Grid.Row="4" HorizontalOptions="Center"/>
+                                    <Label x:Name="disponivel" Text="{Binding Disponivel}" Grid.Column="1" Grid.Row="4" IsVisible="False" HorizontalOptions="Center"/>
+                                </Grid>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
